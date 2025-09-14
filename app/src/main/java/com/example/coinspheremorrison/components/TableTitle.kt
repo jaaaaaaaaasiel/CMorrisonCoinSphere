@@ -13,7 +13,7 @@ import com.example.coinspheremorrison.ui.theme.TextDim
 @Composable
 fun TableTitle(){
     Row(modifier = Modifier
-        .padding(horizontal = 10.dp)
+        .padding(horizontal = 12.dp)
         .padding(top = 10.dp)
         .fillMaxWidth()
     ) {

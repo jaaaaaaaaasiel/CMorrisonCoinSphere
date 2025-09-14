@@ -6,9 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.coinspheremorrison.components.ScrollTableCoins
 import com.example.coinspheremorrison.components.TableTitle
 import com.example.coinspheremorrison.components.TopCard
 import com.example.coinspheremorrison.ui.theme.Background
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CoinSphereMorrisonTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HomeScreen()
+                    HomeScreen(innerPadding)
                 }
             }
         }
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen(x: PaddingValues){
     Column(modifier = Modifier
         .fillMaxSize()
         .background(Background)
@@ -60,6 +61,7 @@ fun HomeScreen(){
             thickness = 1.dp,
             color = TextDim
         )
+        ScrollTableCoins()
 
     }
 }
@@ -69,6 +71,6 @@ fun HomeScreen(){
 @Composable
 fun GreetingPreview() {
     CoinSphereMorrisonTheme {
-        HomeScreen()
+        HomeScreen(PaddingValues(15.dp))
     }
 }
